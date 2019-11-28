@@ -1,0 +1,37 @@
+{
+    "name": "ducha/autocomplete",
+    "description": "Autocomplete suggestions for Laravel using Redis.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marko Milivojevic",
+            "email": "milivojemarko@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ducha\\Autocomplete\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ducha\\Autocomplete\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ducha\\Autocomplete\\AutocompleteServiceProvider"
+            ],
+            "aliases": {
+                "Autocomplete": "Ducha\\Autocomplete\\Facades\\Autocomplete"
+            }
+        }
+    }
+}
