@@ -59,7 +59,7 @@ class Autocomplete
             throw new \InvalidArgumentException('Term cannot contain "' . static::TERM_CASE_SEPARATOR . '"');
         }
 
-        return strtolower($term) . static::TERM_CASE_SEPARATOR . $term;
+        return mb_strtolower($term) . static::TERM_CASE_SEPARATOR . $term;
     }
 
     /**
@@ -106,7 +106,7 @@ class Autocomplete
      */
     public function complete(string $bucket, string $prefix): array
     {
-        $prefix = strtolower($prefix);
+        $prefix = mb_strtolower($prefix);
         $matches = $this->connection->zRangeByLex($bucket, "[$prefix", "[$prefix\xff");
 
         return $this->prepareMatches($matches);
