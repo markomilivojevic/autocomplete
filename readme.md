@@ -1,4 +1,4 @@
-# Overview
+# Laravel redis autocomplete
 
 ## Installation
 ```bash
@@ -18,7 +18,7 @@ Autocomplete::addTerm('cities', 'Berlin');
 ```
 Get suggestions from bucket:
 ```php
-Autocomplete::complete('cities', 'Ber')
+Autocomplete::complete('cities', 'Ber');
 ```
 
 #### All methods
